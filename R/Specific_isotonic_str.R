@@ -26,20 +26,20 @@
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-Ordered_Tree <- function(y, w=NULL) {
+Ordered_Tree <- function(y, w = NULL) {
   # error control
   if (!is.null(w)) {
-    if(min(w)<0) {
+    if (min(w) < 0) {
       stop("The weights w should not be negative.")
     }
-    if(length(y)!=length(w)) {
+    if (length(y) != length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }
   }
   else {
     w <- rep(1, length(y))
   }
-  return(solve_ordered_binary_tree(y,w))
+  return(solve_ordered_binary_tree(y, w))
 }
 
 
@@ -70,20 +70,20 @@ Ordered_Tree <- function(y, w=NULL) {
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-Ordered_2d_grid <- function(y, w=NULL) {
+Ordered_2d_grid <- function(y, w = NULL) {
   # error control
   if (!is.null(w)) {
-    if(min(w)<0) {
+    if (min(w) < 0) {
       stop("The weights w should not be negative.")
     }
-    if(length(y)!=length(w)) {
+    if (length(y) != length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }
   }
   else {
     w <- rep(1, length(y))
   }
-  return(solve_ordered_2d_grid(y,w))
+  return(solve_ordered_2d_grid(y, w))
 }
 
 
@@ -114,18 +114,18 @@ Ordered_2d_grid <- function(y, w=NULL) {
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-Ordered_chain <- function(y, w=NULL) {
+Ordered_chain <- function(y, w = NULL) {
   # error control
   if (!is.null(w)) {
-    if(min(w)<0) {
+    if (min(w) < 0) {
       stop("The weights w should not be negative.")
     }
-    if(length(y)!=length(w)) {
+    if (length(y) != length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }
   }
   else {
     w <- rep(1, length(y))
   }
-  return(solve_ordered_chain(y,w))
+  return(solve_ordered_chain(y, w))
 }
