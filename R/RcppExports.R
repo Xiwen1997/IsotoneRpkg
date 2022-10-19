@@ -5,6 +5,10 @@ solve_ordered_binary_tree <- function(y_input, w_input) {
     .Call('_IsotoneOptimization_solve_ordered_binary_tree', PACKAGE = 'IsotoneOptimization', y_input, w_input)
 }
 
+solve_ordered_2d_grid <- function(y_input, w_input) {
+    .Call('_IsotoneOptimization_solve_ordered_2d_grid', PACKAGE = 'IsotoneOptimization', y_input, w_input)
+}
+
 solve_ordered_arbitrary_DAG <- function(y_input, w_input, E_mat_input) {
     .Call('_IsotoneOptimization_solve_ordered_arbitrary_DAG', PACKAGE = 'IsotoneOptimization', y_input, w_input, E_mat_input)
 }
