@@ -960,6 +960,29 @@ private:
 
 
 // [[Rcpp::export]]
+NumericVector solve_ordered_chain(NumericVector y_input, NumericVector w_input) {
+  int n = y_input.size();
+  double* y = new double[n];
+  double* w = new double[n];
+  for(int i = 0; i < n; i++) {
+    y[i] = y_input[i];
+    w[i] = w_input[i];
+  }
+  orderedBlock* BT = new orderedBlock(n, y, w);
+  BT->load_chain_isotonic_str();
+  BT->solve_by_SBM();
+
+  double* x_ordered = new double[n];
+  BT->get_x_calibrated(x_ordered);
+  NumericVector x_res(n);
+  for(int i = 0; i < n; i++) {
+    x_res[i] = x_ordered[i];
+  }
+  return(x_res);
+}
+
+
+// [[Rcpp::export]]
 NumericVector solve_ordered_binary_tree(NumericVector y_input, NumericVector w_input) {
   int n = y_input.size();
   double* y = new double[n];

@@ -21,7 +21,7 @@ Isotonic Regression with binary-tree-ordered isotonic constraints
 \examples{
 library(IsotoneOptimization)
 set.seed(10)
-Ordered_Tree(rnorm(10), rep(1/10))
+Ordered_Tree(rnorm(10), rep(1,10))
 
 }
 \references{
