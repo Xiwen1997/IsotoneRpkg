@@ -43,6 +43,9 @@ Ordered_DAG <- function(y, w=rep(1,length(y)), Emat) {
   }
 
   if (!is.null(w)) {
+    if(min(w)<0) {
+      Stop("The weights w should not be negative.")
+    }
     if(length(y)!=length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }

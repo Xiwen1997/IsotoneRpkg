@@ -27,6 +27,9 @@
 Ordered_Tree <- function(y, w=NULL) {
   # error control
   if (!is.null(w)) {
+    if(min(w)<0) {
+      Stop("The weights w should not be negative.")
+    }
     if(length(y)!=length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }
@@ -65,6 +68,9 @@ Ordered_Tree <- function(y, w=NULL) {
 Ordered_2d_grid <- function(y, w=NULL) {
   # error control
   if (!is.null(w)) {
+    if(min(w)<0) {
+      Stop("The weights w should not be negative.")
+    }
     if(length(y)!=length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }
@@ -103,6 +109,9 @@ Ordered_2d_grid <- function(y, w=NULL) {
 Ordered_chain <- function(y, w=NULL) {
   # error control
   if (!is.null(w)) {
+    if(min(w)<0) {
+      Stop("The weights w should not be negative.")
+    }
     if(length(y)!=length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }
