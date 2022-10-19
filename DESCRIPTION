@@ -1,0 +1,30 @@
+Package: IsotoneOptimization
+Title: Implementing Sequential Block Merging Algorithm for General Isotone Optimization
+Version: 0.0.0.9000
+Authors@R: c(
+  person(c("Daniel", "P."), "Palomar", role = c("cre", "aut"), email = "daniel.p.palomar@gmail.com"),
+  person("Xiwen", "Wang", role = "aut", email = "xwangew@connect.ust.hk"),
+  person("Ze", "Vinicius", role = "aut", email = "jvmirca@gmail.com")
+  )
+Description: The package implements the Sequential Block Merging (SBM) algorithm for solving isotonic regression 
+    unde isotonic constraints that can be represented by an arbitrary directed acyclic graph (DAG).
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+LinkingTo:
+    Rcpp,
+    RcppEigen
+Imports: 
+    Rcpp,
+Suggests:
+    knitr,
+    ggplot2,
+    rmarkdown,
+    R.rsp,
+    testthat,
+    viridisLite
+VignetteBuilder:
+    knitr,
+    rmarkdown,
+    R.rsp
