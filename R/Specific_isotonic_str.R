@@ -2,7 +2,7 @@
 #'
 #' @description Isotonic Regression with binary-tree-ordered isotonic constraints
 #'
-#' @author Xiwen Wang, Daniel P. Palomar
+#' @author Xiwen Wang, Zé Vinícius, and Daniel P. Palomar
 #'
 #' @references
 #' Wang, X., Ying, J., Cardoso, J. V. M., & Palomar, D. P. (2022, June).
@@ -19,14 +19,14 @@
 #' @examples
 #' library(IsotoneOptimization)
 #' set.seed(10)
-#' Ordered_Tree(rnorm(10), rep(1,10))
+#' Solve_isotone_binary_tree(rnorm(10), rep(1,10))
 #'
 #' @import Rcpp
 #' @import igraph
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-Ordered_Tree <- function(y, w = NULL) {
+Solve_isotone_binary_tree <- function(y, w = NULL) {
   # error control
   if (!is.null(w)) {
     if (min(w) < 0) {
@@ -47,7 +47,7 @@ Ordered_Tree <- function(y, w = NULL) {
 #'
 #' @description Isotonic Regression with 2d-grid-ordered isotonic constraints
 #'
-#' @author Xiwen Wang, Daniel P. Palomar
+#' @author Xiwen Wang, Zé Vinícius, and Daniel P. Palomar
 #'
 #' @references
 #' Wang, X., Ying, J., Cardoso, J. V. M., & Palomar, D. P. (2022, June).
@@ -64,13 +64,13 @@ Ordered_Tree <- function(y, w = NULL) {
 #' @examples
 #' library(IsotoneOptimization)
 #' set.seed(10)
-#' Ordered_2d_grid(rnorm(10), rep(1,10))
+#' Solve_isotone_2d_grid(rnorm(10), rep(1,10))
 #'
 #' @import Rcpp
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-Ordered_2d_grid <- function(y, w = NULL) {
+Solve_isotone_2d_grid <- function(y, w = NULL) {
   # error control
   if (!is.null(w)) {
     if (min(w) < 0) {
@@ -91,7 +91,7 @@ Ordered_2d_grid <- function(y, w = NULL) {
 #'
 #' @description Isotonic Regression with chain-ordered isotonic constraints
 #'
-#' @author Xiwen Wang, Daniel P. Palomar
+#' @author Xiwen Wang, Zé Vinícius, and Daniel P. Palomar
 #'
 #' @references
 #' Wang, X., Ying, J., Cardoso, J. V. M., & Palomar, D. P. (2022, June).
@@ -108,13 +108,13 @@ Ordered_2d_grid <- function(y, w = NULL) {
 #' @examples
 #' library(IsotoneOptimization)
 #' set.seed(10)
-#' Ordered_chain(rnorm(10), rep(1,10))
+#' Solve_isotone_chain(rnorm(10), rep(1,10))
 #'
 #' @import Rcpp
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-Ordered_chain <- function(y, w = NULL) {
+Solve_isotone_chain <- function(y, w = NULL) {
   # error control
   if (!is.null(w)) {
     if (min(w) < 0) {

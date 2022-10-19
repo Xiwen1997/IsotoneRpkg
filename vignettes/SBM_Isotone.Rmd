@@ -58,7 +58,7 @@ $$
 $$
 ```{r, cache=TRUE}
 y <- 1:100 /10 + rnorm(100, 0, 3)
-y_calibrated <- Ordered_chain(y)
+y_calibrated <- Solve_isotone_chain(y)
 
 plot(1:100,y,type="o",col="red")
 lines(1:100,y_calibrated,col="blue")
@@ -83,7 +83,7 @@ p <- 20
 # build a tree graph
 tr <- make_tree(p, children = 2, mode = "out")
 y <- 1:20 /10 + rnorm(20, 0, 3)
-y_calibrated <- Ordered_Tree(y)
+y_calibrated <- Solve_isotone_binary_tree(y)
 
 V(tr)$name <- as.character(round(y_calibrated,2))
 plot(tr,  vertex.size = 4,          # Smaller nodes
@@ -125,7 +125,7 @@ for(i in 1:5)
 E_mat <- t(E_mat)
 
 y <- 1:p /10 + rnorm(p, 0, 3)
-y_calibrated <- Ordered_2d_grid(y)
+y_calibrated <- Solve_isotone_2d_grid(y)
 
 grid_graph <- graph_from_edgelist(E_mat)
 V(grid_graph)$name <- as.character(round(y_calibrated,2))
