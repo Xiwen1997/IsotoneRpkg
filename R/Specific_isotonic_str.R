@@ -21,6 +21,7 @@
 #' Ordered_Tree(rnorm(10), rep(1,10))
 #'
 #' @import Rcpp
+#' @import igraph
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
@@ -33,6 +34,9 @@ Ordered_Tree <- function(y, w=NULL) {
     if(length(y)!=length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }
+  }
+  else {
+    w <- rep(1, length(y))
   }
   return(solve_ordered_binary_tree(y,w))
 }
@@ -75,6 +79,9 @@ Ordered_2d_grid <- function(y, w=NULL) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }
   }
+  else {
+    w <- rep(1, length(y))
+  }
   return(solve_ordered_2d_grid(y,w))
 }
 
@@ -115,6 +122,9 @@ Ordered_chain <- function(y, w=NULL) {
     if(length(y)!=length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }
+  }
+  else {
+    w <- rep(1, length(y))
   }
   return(solve_ordered_chain(y,w))
 }

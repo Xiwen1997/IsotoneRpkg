@@ -10,6 +10,8 @@ Ordered_DAG(y, w = rep(1, length(y)), Emat)
 \item{y}{regression vector}
 
 \item{w}{weights (default is NULL)}
+
+\item{Emat}{An m*2 Matrix to define the edges. Each row, given as (i,j), represents an edge from i to j}
 }
 \value{
 A list containing the following elements:

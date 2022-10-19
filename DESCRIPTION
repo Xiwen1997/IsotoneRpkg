@@ -17,6 +17,7 @@ LinkingTo:
     RcppEigen
 Imports: 
     Rcpp,
+    igraph
 Suggests:
     knitr,
     ggplot2,
@@ -24,7 +25,4 @@ Suggests:
     R.rsp,
     testthat,
     viridisLite
-VignetteBuilder:
-    knitr,
-    rmarkdown,
-    R.rsp
+VignetteBuilder:knitr

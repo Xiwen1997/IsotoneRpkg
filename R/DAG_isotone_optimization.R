@@ -11,6 +11,7 @@
 #' (Vol. 36, No. 8, pp. 8575-8583).
 #' @param y regression vector
 #' @param w weights (default is NULL)
+#' @param Emat An m*2 Matrix to define the edges. Each row, given as (i,j), represents an edge from i to j
 #'
 #' @return A list containing the following elements:
 #' \item{\code{x_ordered}}{Optimal solution that satisfies the .}
