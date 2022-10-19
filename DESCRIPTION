@@ -23,6 +23,7 @@ Suggests:
     ggplot2,
     rmarkdown,
     R.rsp,
-    testthat,
+    testthat (>= 3.0.0),
     viridisLite
-VignetteBuilder:knitr
+VignetteBuilder: knitr
+Config/testthat/edition: 3
