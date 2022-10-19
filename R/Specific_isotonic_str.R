@@ -5,7 +5,7 @@
 #' @author Xiwen Wang, Daniel P. Palomar
 #'
 #' @references
-#' Wang, X., Ying, J., Cardoso, J. V. D. M., & Palomar, D. P. (2022, June).
+#' Wang, X., Ying, J., Cardoso, J. V. M., & Palomar, D. P. (2022, June).
 #' Efficient Algorithms for General Isotone Optimization.
 #' In Proceedings of the \emph{AAAI Conference on Artificial Intelligence}
 #' (Vol. 36, No. 8, pp. 8575-8583).
@@ -50,7 +50,7 @@ Ordered_Tree <- function(y, w=NULL) {
 #' @author Xiwen Wang, Daniel P. Palomar
 #'
 #' @references
-#' Wang, X., Ying, J., Cardoso, J. V. D. M., & Palomar, D. P. (2022, June).
+#' Wang, X., Ying, J., Cardoso, J. V. M., & Palomar, D. P. (2022, June).
 #' Efficient Algorithms for General Isotone Optimization.
 #' In Proceedings of the \emph{AAAI Conference on Artificial Intelligence}
 #' (Vol. 36, No. 8, pp. 8575-8583).
@@ -94,7 +94,7 @@ Ordered_2d_grid <- function(y, w=NULL) {
 #' @author Xiwen Wang, Daniel P. Palomar
 #'
 #' @references
-#' Wang, X., Ying, J., Cardoso, J. V. D. M., & Palomar, D. P. (2022, June).
+#' Wang, X., Ying, J., Cardoso, J. V. M., & Palomar, D. P. (2022, June).
 #' Efficient Algorithms for General Isotone Optimization.
 #' In Proceedings of the \emph{AAAI Conference on Artificial Intelligence}
 #' (Vol. 36, No. 8, pp. 8575-8583).
