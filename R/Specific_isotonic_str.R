@@ -9,7 +9,8 @@
 #' Efficient Algorithms for General Isotone Optimization.
 #' In Proceedings of the \emph{AAAI Conference on Artificial Intelligence}
 #' (Vol. 36, No. 8, pp. 8575-8583).
-#' @param y regression vector
+#'
+#' @param y data vector
 #' @param w weights (default is NULL)
 #'
 #' @return A list containing the following elements:
@@ -29,7 +30,7 @@ Ordered_Tree <- function(y, w=NULL) {
   # error control
   if (!is.null(w)) {
     if(min(w)<0) {
-      Stop("The weights w should not be negative.")
+      stop("The weights w should not be negative.")
     }
     if(length(y)!=length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
@@ -40,7 +41,6 @@ Ordered_Tree <- function(y, w=NULL) {
   }
   return(solve_ordered_binary_tree(y,w))
 }
-
 
 
 #' @title Isotonic Regression with 2d-grid-ordered isotonic constraints
@@ -54,7 +54,8 @@ Ordered_Tree <- function(y, w=NULL) {
 #' Efficient Algorithms for General Isotone Optimization.
 #' In Proceedings of the \emph{AAAI Conference on Artificial Intelligence}
 #' (Vol. 36, No. 8, pp. 8575-8583).
-#' @param y regression vector
+#'
+#' @param y data vector
 #' @param w weights (default is NULL)
 #'
 #' @return A list containing the following elements:
@@ -73,7 +74,7 @@ Ordered_2d_grid <- function(y, w=NULL) {
   # error control
   if (!is.null(w)) {
     if(min(w)<0) {
-      Stop("The weights w should not be negative.")
+      stop("The weights w should not be negative.")
     }
     if(length(y)!=length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
@@ -84,7 +85,6 @@ Ordered_2d_grid <- function(y, w=NULL) {
   }
   return(solve_ordered_2d_grid(y,w))
 }
-
 
 
 #' @title Isotonic Regression with chain-ordered isotonic constraints
@@ -98,7 +98,8 @@ Ordered_2d_grid <- function(y, w=NULL) {
 #' Efficient Algorithms for General Isotone Optimization.
 #' In Proceedings of the \emph{AAAI Conference on Artificial Intelligence}
 #' (Vol. 36, No. 8, pp. 8575-8583).
-#' @param y regression vector
+#'
+#' @param y data vector
 #' @param w weights (default is NULL)
 #'
 #' @return A list containing the following elements:
@@ -117,7 +118,7 @@ Ordered_chain <- function(y, w=NULL) {
   # error control
   if (!is.null(w)) {
     if(min(w)<0) {
-      Stop("The weights w should not be negative.")
+      stop("The weights w should not be negative.")
     }
     if(length(y)!=length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
@@ -128,7 +129,3 @@ Ordered_chain <- function(y, w=NULL) {
   }
   return(solve_ordered_chain(y,w))
 }
-
-
-
-
