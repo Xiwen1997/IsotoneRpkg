@@ -165,7 +165,7 @@ DAG_graph <- simplify(
 E_mat <- as_edgelist(DAG_graph)
 
 y <- 1:max(E_mat)/2 + rnorm(max(E_mat), 0, 3)
-y_calibrated <- Ordered_DAG(y, rep(1,max(E_mat)), E_mat)
+y_calibrated <- Solve_isotone_DAG(y, rep(1,max(E_mat)), E_mat)
 
 V(DAG_graph)$name <- as.character(round(y_calibrated,2))
 plot(DAG_graph,  vertex.size = 4,          # Smaller nodes

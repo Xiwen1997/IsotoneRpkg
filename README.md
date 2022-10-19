@@ -24,6 +24,6 @@ library(IsotoneOptimization)
 ## basic example code
 
 Emat <- t(matrix( c(1,2,  1,3,  1,4,  2,5,  2,6,  3,7,  4,8,  5,8,  6,9,  6,10),2,10))
-x_ordered <- Ordered_DAG(rnorm(10), rep(1,10), Emat)
+x_ordered <- Solve_isotone_DAG(rnorm(10), rep(1,10), Emat)
 ```
 

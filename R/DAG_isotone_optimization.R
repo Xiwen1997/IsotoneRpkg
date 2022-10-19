@@ -2,7 +2,7 @@
 #'
 #' @description Isotonic Regression with isotonic constraints represented by arbitrary directed acyclic graph
 #'
-#' @author Xiwen Wang, Daniel P. Palomar
+#' @author Xiwen Wang, Zé Vinícius, and Daniel P. Palomar
 #'
 #' @references
 #' Wang, X., Ying, J., Cardoso, J. V. D. M., & Palomar, D. P. (2022, June).
@@ -19,13 +19,13 @@
 #' @examples
 #' library(IsotoneOptimization)
 #' Emat <- t(matrix( c(1,2,  1,3,  1,4,  2,5,  2,6,  3,7,  4,8,  5,8,  6,9,  6,10),2,10))
-#' Ordered_DAG(rnorm(10), rep(1,10), Emat)
+#' Solve_isotone_DAG(rnorm(10), rep(1,10), Emat)
 #'
 #' @import Rcpp
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-Ordered_DAG <- function(y, w=rep(1,length(y)), Emat) {
+Solve_isotone_DAG <- function(y, w=rep(1,length(y)), Emat) {
   # error control
   if (ncol(Emat) != 2) {
     stop("The matrix Emat should be m * 2.")
