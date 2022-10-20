@@ -18,14 +18,14 @@
 #'
 #' @examples
 #' library(IsotoneOptimization)
-#' Emat <- t(matrix( c(1,2,  1,3,  1,4,  2,5,  2,6,  3,7,  4,8,  5,8,  6,9,  6,10),2,10))
+#' Emat <- t(matrix(c(1,2,  1,3,  1,4,  2,5,  2,6,  3,7,  4,8,  5,8,  6,9,  6,10),2, 10))
 #' solve_isotone_DAG(rnorm(10), rep(1,10), Emat)
 #'
 #' @import Rcpp
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-solve_isotone_DAG <- function(y, w=rep(1,length(y)), Emat) {
+solve_isotone_DAG <- function(y, w = rep(1, length(y)), Emat) {
   # error control
   if (ncol(Emat) != 2) {
     stop("The matrix Emat should be m * 2.")
@@ -44,14 +44,14 @@ solve_isotone_DAG <- function(y, w=rep(1,length(y)), Emat) {
   }
 
   if (!is.null(w)) {
-    if(min(w)<0) {
+    if(min(w) < 0) {
       Stop("The weights w should not be negative.")
     }
-    if(length(y)!=length(w)) {
+    if(length(y) != length(w)) {
       stop("Length of ", dQuote("y"), " should be equal to length of ", dQuote("w"), ".")
     }
   }
-  return(solve_ordered_arbitrary_DAG(y, w, Emat-1))
+  return(solve_ordered_arbitrary_DAG(y, w, Emat - 1))
 }
 
 
