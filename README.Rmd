@@ -10,7 +10,19 @@ output:
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-
+```{r, echo = FALSE}
+library(knitr)
+opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  fig.align = "center",
+  fig.retina = 2,
+  out.width = "75%",
+  dpi = 96
+)
+knit_hooks$set(pngquant = hook_pngquant)
+```
 
 
 # IsotoneOptimization
@@ -34,8 +46,7 @@ devtools::install_github("Xiwen1997/IsotoneRpkg")
 
 This is a basic example which shows you how to solve a general isotonic regression problem:
 
-
-```r
+```{r}
 library(IsotoneOptimization)
 ## basic example code
 
@@ -45,17 +56,8 @@ x_ordered <- solve_isotone_DAG(rnorm(10), rep(1,10), Emat)
 
 Using package __igraph__, we can better view the ordered vector by regarding isotonic constraints as the edges of a graph. Namely, $x_i\leq x_j$ if there exists an arrow from node $i$ to node $j$
 
-
-```r
+```{r}
 library(igraph)
-#> 
-#> Attaching package: 'igraph'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     decompose, spectrum
-#> The following object is masked from 'package:base':
-#> 
-#>     union
 grid_graph <- graph_from_edgelist(Emat)
 V(grid_graph)$name <- as.character(round(x_ordered,2))
 plot(grid_graph,  vertex.size = 4,          # Smaller nodes
@@ -64,8 +66,6 @@ plot(grid_graph,  vertex.size = 4,          # Smaller nodes
     vertex.label.dist = 1.4,  # Offset the labels
     vertex.label.color = "black")
 ```
-
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="75%" style="display: block; margin: auto;" />
 
 Some typical isotonic constraints, including chain, binary tree, 2d-grid isotonic constraints, can be defined directed. Simply using __solve_isotone_chain__, __solve_isotone_binary_tree__, and __solve_isotone_2d_grid__, you can solve the corresponding isotone optimization problem!
 
