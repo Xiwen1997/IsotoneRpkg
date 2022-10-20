@@ -19,14 +19,14 @@
 #' @examples
 #' library(IsotoneOptimization)
 #' set.seed(10)
-#' Solve_isotone_binary_tree(rnorm(10), rep(1,10))
+#' solve_isotone_binary_tree(rnorm(10), rep(1,10))
 #'
 #' @import Rcpp
 #' @import igraph
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-Solve_isotone_binary_tree <- function(y, w = NULL) {
+solve_isotone_binary_tree <- function(y, w = NULL) {
   # error control
   if (!is.null(w)) {
     if (min(w) < 0) {
@@ -64,13 +64,13 @@ Solve_isotone_binary_tree <- function(y, w = NULL) {
 #' @examples
 #' library(IsotoneOptimization)
 #' set.seed(10)
-#' Solve_isotone_2d_grid(rnorm(10), rep(1,10))
+#' solve_isotone_2d_grid(rnorm(10), rep(1,10))
 #'
 #' @import Rcpp
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-Solve_isotone_2d_grid <- function(y, w = NULL) {
+solve_isotone_2d_grid <- function(y, w = NULL) {
   # error control
   if (!is.null(w)) {
     if (min(w) < 0) {
@@ -108,13 +108,13 @@ Solve_isotone_2d_grid <- function(y, w = NULL) {
 #' @examples
 #' library(IsotoneOptimization)
 #' set.seed(10)
-#' Solve_isotone_chain(rnorm(10), rep(1,10))
+#' solve_isotone_chain(rnorm(10), rep(1,10))
 #'
 #' @import Rcpp
 #' @useDynLib IsotoneOptimization
 #' @importFrom Rcpp sourceCpp
 #' @export
-Solve_isotone_chain <- function(y, w = NULL) {
+solve_isotone_chain <- function(y, w = NULL) {
   # error control
   if (!is.null(w)) {
     if (min(w) < 0) {
